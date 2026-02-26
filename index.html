@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <style>
         html {
             scroll-behavior: smooth;
@@ -38,12 +39,14 @@
             justify-content: space-around;
             align-items: center;
             height: 89px;
-            background-color: rgb(18, 18, 62);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, rgba(18, 18, 62, 0.95), rgba(35, 15, 85, 0.95));
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(170, 107, 228, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid rgba(170, 107, 228, 0.2);
         }
 
         nav ul {
@@ -217,13 +220,16 @@
         }
 
         .leftSection .btn {
-            background: #051549;
+            background: linear-gradient(135deg, #aa6be4, #7c3aed);
             color: white;
-            border: 2px solid white;
-            border-radius: 6px;
-            font-size: 20px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            font-size: 16px;
             cursor: pointer;
-            padding: 12px;
+            padding: 14px 28px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(170, 107, 228, 0.3);
         }
 
         .button a.btn {
@@ -237,8 +243,10 @@
         }
 
         .btn:hover {
-            background: rgb(170, 107, 228);
+            background: linear-gradient(135deg, #7c3aed, #aa6be4);
             color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(170, 107, 228, 0.5);
             transition: all 0.3s ease;
         }
 
@@ -325,10 +333,12 @@
         }
 
         .skills-container {
-            background: rgba(170, 107, 228, 0.1);
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid rgba(170, 107, 228, 0.2);
+            background: linear-gradient(135deg, rgba(170, 107, 228, 0.15), rgba(124, 58, 237, 0.1));
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(170, 107, 228, 0.3);
+            box-shadow: 0 8px 32px rgba(170, 107, 228, 0.1);
         }
 
         .skill-category {
@@ -578,17 +588,19 @@
         }
 
         .project-card {
-            background: rgba(170, 107, 228, 0.05);
-            border: 1px solid rgba(170, 107, 228, 0.1);
+            background: linear-gradient(135deg, rgba(170, 107, 228, 0.1), rgba(124, 58, 237, 0.08));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(170, 107, 228, 0.2);
             border-radius: 15px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             position: relative;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(170, 107, 228, 0.3);
+            border-color: rgba(170, 107, 228, 0.4);
         }
 
         .project-image {
@@ -670,11 +682,66 @@
             }
         }
 
+        /* Stats Section */
+        .stats-section {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(170, 107, 228, 0.15), rgba(124, 58, 237, 0.1));
+            border: 1px solid rgba(170, 107, 228, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(170, 107, 228, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(170, 107, 228, 0.1);
+            border-color: rgba(170, 107, 228, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #aa6be4, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 5px;
+        }
+
+        .stat-description {
+            font-size: 0.9rem;
+            color: rgb(153, 153, 226);
+        }
+
         footer {
-            background: linear-gradient(180deg, rgb(18, 18, 62) 0%, rgb(13, 13, 44) 100%);
+            background: linear-gradient(180deg, rgba(18, 18, 62, 0.95), rgba(13, 13, 44, 0.98));
+            backdrop-filter: blur(10px);
             padding: 60px 0 0;
             position: relative;
             margin-top: 100px;
+            border-top: 1px solid rgba(170, 107, 228, 0.2);
         }
 
         footer::before {
@@ -1018,12 +1085,12 @@
         <section id="about" class="aboutSection">
             <div class="about-container">
                 <div class="about-content">
-                    <h2>About Me</h2>
-                    <p class="about-intro">Hi, I'm <span class="purple">Nilesh</span>, a passionate Full Stack Developer
+                    <h2 data-aos="fade-down">About Me</h2>
+                    <p class="about-intro" data-aos="fade-up">Hi, I'm <span class="purple">Nilesh</span>, a passionate Full Stack Developer
                         based in India.</p>
 
                     <div class="about-details">
-                        <div class="about-text">
+                        <div class="about-text" data-aos="fade-right">
                             <h3>Professional Bio</h3>
                             <p>I specialize in building robust and scalable web applications using modern technologies.
                                 With expertise in both frontend and backend development, I create seamless user
@@ -1157,7 +1224,7 @@
         </div> -->
         <section id="education" class="education-section">
             <div class="section-title">
-                <h2>My Education</h2>
+                <h2 data-aos="fade-down">My Education</h2>
                 <!-- <p>My academic journey </p> -->
             </div>
 
@@ -1227,12 +1294,12 @@
         <hr>
         <section id="projects" class="projects-section">
             <div class="section-title">
-                <h2>Featured Projects</h2>
-                <p>Here are some of my recent works that showcase my skills and experience</p>
+                <h2 data-aos="fade-down">Featured Projects</h2>
+                <p data-aos="fade-up">Here are some of my recent works that showcase my skills and experience</p>
             </div>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="0">
                     <!-- <div class="project-image">
                         <img src="project1.jpg" alt="E-commerce Website">
                     </div> -->
@@ -1255,7 +1322,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
                     <!-- <div class="project-image">
                         <img src="project2.jpg" alt="Task Management App">
                     </div> -->
@@ -1278,7 +1345,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
                     <!-- <div class="project-image">
                         <img src="project3.jpg" alt="Weather Dashboard">
                     </div> -->
@@ -1306,7 +1373,7 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
                     <!-- <div class="project-image">
                         <img src="project4.jpg" alt="Social Media Dashboard">
                     </div> -->
@@ -1335,6 +1402,32 @@
             </div>
         </section>
     </main>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item" data-aos="fade-up">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Projects Completed</div>
+                <div class="stat-description">Full-stack web applications</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Years Experience</div>
+                <div class="stat-description">Professional development</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Technologies</div>
+                <div class="stat-description">Frontend to backend stack</div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Client Satisfaction</div>
+                <div class="stat-description">Dedicated to excellence</div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="footer">
@@ -1402,7 +1495,15 @@
     </button>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
         window.addEventListener('DOMContentLoaded', (event) => {
             document.querySelectorAll('.skill-per').forEach(skillBar => {
                 const percentage = skillBar.getAttribute('per');
