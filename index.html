@@ -982,6 +982,7 @@
             }
 
             nav .right {
+                display: none;
                 position: absolute;
                 top: 89px;
                 left: 0;
@@ -989,13 +990,11 @@
                 background-color: rgb(18, 18, 62);
                 flex-direction: column;
                 padding: 20px;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
+                transition: all 0.3s ease;
             }
 
             nav .right.active {
-                max-height: 300px;
+                display: flex;
             }
 
             nav ul {
